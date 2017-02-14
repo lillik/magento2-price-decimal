@@ -1,0 +1,32 @@
+{
+    "name": "lillik/magento2-price-decimal",
+    "description": "Magento 2 Price Decimal Precision",
+    "keywords": [
+        "magento2"
+    ],
+    "license": "Apache-2.0",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Lilian Codreanu",
+            "email": "lilian.codreanu@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "source": ""
+    },
+    "require": {
+        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6",
+        "magento/framework": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Lillik\\PriceDecimal\\": ""
+        }
+    }
+}
