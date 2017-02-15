@@ -3,7 +3,7 @@
     <system>
         <section id="catalog_price_decimal" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
             <tab>catalog</tab>
-            <resource>Clipro_PriceDecimal::config</resource>
+            <resource>Lillik_PriceDecimal::config</resource>
             <label>Simple Price Decimal (Precision)</label>
             <group id="general" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General</label>
