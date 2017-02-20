@@ -11,19 +11,18 @@
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
                 </field>
-                <field id="can_show_decimal" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="can_show_decimal" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                     <depends>
                         <field id="*/*/enable">1</field>
                     </depends>
                     <label>Show the decimal?</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="price_precision" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="price_precision" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Decimal Length</label>
                     <depends>
                         <field id="*/*/enable">1</field>
-                    </depends>
-                    <!--<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+                    </depends>          
                 </field>
         </group>
         </section>
