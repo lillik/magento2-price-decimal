@@ -4,6 +4,17 @@ The **«Price Decimal Precision»** Magento 2 extension allows a store administr
 The price display settings are individual per currency and per store.
 The extension supports unlimited number of currencies.
 
+This extension allows you to change the number of decimals (precision), or delete it, used when displaying price in fron office of your store. The extentension support multi store and multe website configuration, this is can be usable for you in case if you have ti manager multiwebsite / multisore shop. The ** "Price Decimal Precision" ** extension is free and fully configurable extension, this extension can be helpful to your business.
+
+### Features ###
+- Free and open source and fully configurable extension.
+- Easy to install and unistall.
+- Easy to configurate.
+- Remove or change price precision from specific website or store.
+- Support English translation.
+
+
+The ** Price Decimal Precision** can be
 
 ![alt text](https://i.imgsafe.org/30da48c019.png "Magento 2 Price Decimal Precision")
 
