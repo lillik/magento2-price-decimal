@@ -13,9 +13,6 @@ This extension allows you to change the number of decimals (precision), or delet
 - Remove or change price precision from specific website or store.
 - Support English translation.
 
-
-The ** Price Decimal Precision** can be
-
 ![alt text](https://i.imgsafe.org/30da48c019.png "Magento 2 Price Decimal Precision")
 
 ### Installation ###
