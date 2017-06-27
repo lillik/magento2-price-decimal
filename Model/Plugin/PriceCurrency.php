@@ -21,6 +21,11 @@ class PriceCurrency extends PriceFormatPluginAbstract
     ) {
 
         if ($this->getConfig()->isEnable()) {
+
+            if(!isset($args[1])){
+                $args[1] = true;
+            }
+
             $args[2] = $this->getPricePrecision(); // Precision argument
         }
 
