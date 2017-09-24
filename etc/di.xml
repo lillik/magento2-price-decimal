@@ -2,6 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <preference for="Lillik\PriceDecimal\Model\ConfigInterface" type="Lillik\PriceDecimal\Model\Config" />
+    <!--<preference for="Magento\Framework\Locale\CurrencyInterface" type="Magento\Framework\Locale\Currency" />-->
+    <preference for="Magento\Framework\CurrencyInterface" type="Lillik\PriceDecimal\Model\Currency" />
 
     <type name="Magento\Framework\Pricing\PriceCurrencyInterface">
         <plugin name="lillik_price_decimal_price_currency"
