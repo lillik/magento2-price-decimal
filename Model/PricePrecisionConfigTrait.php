@@ -12,10 +12,6 @@ namespace Lillik\PriceDecimal\Model;
 trait PricePrecisionConfigTrait
 {
 
-    /**
-     * @var \Lillik\PriceDecimal\Model\ConfigInterface
-     */
-    protected $moduleConfig;
 
     /**
      * @return \Lillik\PriceDecimal\Model\ConfigInterface
