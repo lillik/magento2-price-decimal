@@ -27,6 +27,13 @@ The preferred way of installing lillik/magento2-price-decimal is through Compose
 ```bash
 php composer.phar require lillik/magento2-price-decimal
 ```
+
+### Configuration
+
+```
+Stores -> Configuration -> Catalog
+```
+
 ### Contribution
 If you have any issues, please [contact me](https://twitter.com/clipro) or open a bug report in GitHub's [issue tracker](https://github.com/lillik/magento2-price-decimal/issues).
 
