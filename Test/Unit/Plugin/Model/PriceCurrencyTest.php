@@ -12,7 +12,7 @@ use Lillik\PriceDecimal\Model\ConfigInterface;
 use Lillik\PriceDecimal\Model\Plugin\PriceCurrency;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
-class PriceCurrencyTest extends \PHPUnit_Framework_TestCase
+class PriceCurrencyTest extends \PHPUnit\Framework\TestCase
 {
 
     private $closureMock;
