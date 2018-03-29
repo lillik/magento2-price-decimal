@@ -5,7 +5,7 @@
             <tab>catalog</tab>
             <resource>Lillik_PriceDecimal::config</resource>
             <label>Simple Price Decimal (Precision)</label>
-            <group id="general" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="0" showInStore="0">
+            <group id="general" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable</label>
