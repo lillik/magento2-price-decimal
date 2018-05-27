@@ -14,4 +14,8 @@
         <plugin name="lillik_price_decimal_for_orders" type="Lillik\PriceDecimal\Model\Plugin\OrderPlugin" sortOrder="10" disabled="false"/>
     </type>
 
+    <type name="Magento\Framework\CurrencyInterface">
+        <plugin name="lillik_price_decimal_for_currency" type="Lillik\PriceDecimal\Model\Plugin\Currency" sortOrder="10" disabled="false"/>
+    </type>
+
 </config>

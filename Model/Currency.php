@@ -8,11 +8,11 @@
 
 namespace Lillik\PriceDecimal\Model;
 
-
 use Magento\Framework\CurrencyInterface;
 use Magento\Framework\Currency as MagentoCurrency;
+use Lillik\PriceDecimal\Model\ConfigInterface;
 
-
+/** @method getPricePrecision */
 class Currency extends MagentoCurrency implements CurrencyInterface
 {
 
@@ -21,27 +21,23 @@ class Currency extends MagentoCurrency implements CurrencyInterface
     /**
      * @var \Lillik\PriceDecimal\Model\ConfigInterface
      */
-    protected $moduleConfig;
+    public $moduleConfig;
 
     /**
      * Currency constructor.
      *
      * @param \Magento\Framework\App\CacheInterface      $appCache
+     * @param \Lillik\PriceDecimal\Model\ConfigInterface $moduleConfig
      * @param null                                       $options
      * @param null                                       $locale
-     * @param \Lillik\PriceDecimal\Model\ConfigInterface $moduleConfig
      */
     public function __construct(
-        \Magento\Framework\App\CacheInterface $appCache, $options = null,
-        $locale = null,
-        ConfigInterface $moduleConfig
+        \Magento\Framework\App\CacheInterface $appCache,
+        ConfigInterface $moduleConfig,
+        $options = null,
+        $locale = null
     ) {
         $this->moduleConfig = $moduleConfig;
-
-        $this->_options['precision'] = $this->getPricePrecision();
-
         parent::__construct($appCache, $options, $locale);
     }
-
-
 }
