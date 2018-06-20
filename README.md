@@ -39,3 +39,6 @@ If you have any issues, please [contact me](https://twitter.com/clipro) or open 
 
 ### License
 The code is licensed under [Apache-2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+
+### TODO 
+ - remove decimals in cart and checkout
