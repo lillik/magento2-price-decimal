@@ -18,10 +18,9 @@ class PriceCurrency extends PriceFormatPluginAbstract
         \Magento\Directory\Model\PriceCurrency $subject,
         ...$args
     ) {
-
         if ($this->getConfig()->isEnable()) {
             // add the optional arg
-            if(! isset($args[1])){
+            if (!isset($args[1])) {
                 $args[1] = true;
             }
             // Precision argument
@@ -43,8 +42,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
         callable $proceed,
         $price,
         ...$args
-    )
-    {
+    ) {
         if ($this->getConfig()->isEnable()) {
             return round($price, $this->getPricePrecision());
 
@@ -61,8 +59,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
     public function beforeConvertAndFormat(
         \Magento\Directory\Model\PriceCurrency $subject,
         ...$args
-    )
-    {
+    ) {
         if ($this->getConfig()->isEnable()) {
             // add the optional args
             $args[1] = isset($args[1])? $args[1] : null;
@@ -81,8 +78,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
     public function beforeConvertAndRound(
         \Magento\Directory\Model\PriceCurrency $subject,
         ...$args
-    )
-    {
+    ) {
         if ($this->getConfig()->isEnable()) {
             //add optional args
             $args[1] = isset($args[1])? $args[1] : null;

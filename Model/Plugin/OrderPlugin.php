@@ -18,8 +18,7 @@ class OrderPlugin extends PriceFormatPluginAbstract
     public function beforeFormatPricePrecision(
         \Magento\Sales\Model\Order $subject,
         ...$args
-    )
-    {
+    ) {
         //is enabled
         if ($this->getConfig()->isEnable()) {
             //change the precision
@@ -28,5 +27,4 @@ class OrderPlugin extends PriceFormatPluginAbstract
 
         return $args;
     }
-
 }

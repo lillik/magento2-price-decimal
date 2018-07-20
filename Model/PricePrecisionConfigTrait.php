@@ -8,7 +8,6 @@
 
 namespace Lillik\PriceDecimal\Model;
 
-
 trait PricePrecisionConfigTrait
 {
 
@@ -32,5 +31,4 @@ trait PricePrecisionConfigTrait
 
         return 0;
     }
-
 }
