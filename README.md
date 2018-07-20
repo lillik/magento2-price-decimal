@@ -39,3 +39,7 @@ If you have any issues, please [contact me](https://twitter.com/clipro) or open 
 
 ### License
 The code is licensed under [Apache-2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+
+### TODO 
+ - Remove decimals in cart and checkout
+ - Remove only zero decimal option ([description](https://github.com/lillik/magento2-price-decimal/issues/35))
