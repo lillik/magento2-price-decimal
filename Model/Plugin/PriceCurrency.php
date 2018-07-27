@@ -63,8 +63,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
         if ($this->getConfig()->isEnable()) {
             // add the optional args
             $args[1] = isset($args[1])? $args[1] : null;
-            $args[2] = isset($args[2])? $args[2] : null;
-            $args[3] = $this->getPricePrecision();
+            $args[2] = intval($this->getPricePrecision());
         }
 
         return $args;
