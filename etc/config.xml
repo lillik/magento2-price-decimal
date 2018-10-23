@@ -7,4 +7,13 @@
             </general>
         </catalog_price_decimal>
     </default>
+    <websites>
+        <admin>
+            <catalog_price_decimal>
+                <general>
+                    <enable>0</enable>
+                </general>
+            </catalog_price_decimal>
+        </admin>
+    </websites>
 </config>

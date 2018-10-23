@@ -52,7 +52,7 @@ class Config implements ConfigInterface
      *
      * @return mixed
      */
-    public function getValueByPath($path, $scopeType = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+    public function getValueByPath($path, $scopeType = 'website')
     {
         return $this->getScopeConfig()->getValue($path, $scopeType);
     }
@@ -62,7 +62,7 @@ class Config implements ConfigInterface
      */
     public function isEnable()
     {
-        return $this->getValueByPath(self::XML_PATH_GENERAL_ENABLE, 'store');
+        return $this->getValueByPath(self::XML_PATH_GENERAL_ENABLE, 'website');
     }
 
     /**
@@ -70,7 +70,7 @@ class Config implements ConfigInterface
      */
     public function canShowPriceDecimal()
     {
-        return $this->getValueByPath(self::XML_PATH_CAN_SHOW_PRICE_DECIMAL, 'store');
+        return $this->getValueByPath(self::XML_PATH_CAN_SHOW_PRICE_DECIMAL, 'website');
     }
 
     /**
@@ -80,6 +80,6 @@ class Config implements ConfigInterface
      */
     public function getPricePrecision()
     {
-        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'store');
+        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
     }
 }
