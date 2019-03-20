@@ -12,7 +12,6 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Config implements ConfigInterface
 {
-
     const XML_PATH_PRICE_PRECISION
         = 'catalog_price_decimal/general/price_precision';
 
@@ -47,12 +46,12 @@ class Config implements ConfigInterface
 
     /**
      * Return Config Value by XML Config Path
-     * @param $path
-     * @param $scopeType
+     * @param string $path
+     * @param string $scopeType
      *
      * @return mixed
      */
-    public function getValueByPath($path, $scopeType = 'website')
+    public function getValueByPath($path, $scopeType = \Magento\Store\Model\ScopeInterface::SCOPE_STORE)
     {
         return $this->getScopeConfig()->getValue($path, $scopeType);
     }
@@ -62,7 +61,7 @@ class Config implements ConfigInterface
      */
     public function isEnable()
     {
-        return $this->getValueByPath(self::XML_PATH_GENERAL_ENABLE, 'website');
+        return $this->getValueByPath(self::XML_PATH_GENERAL_ENABLE);
     }
 
     /**
@@ -70,7 +69,7 @@ class Config implements ConfigInterface
      */
     public function canShowPriceDecimal()
     {
-        return $this->getValueByPath(self::XML_PATH_CAN_SHOW_PRICE_DECIMAL, 'website');
+        return $this->getValueByPath(self::XML_PATH_CAN_SHOW_PRICE_DECIMAL);
     }
 
     /**
@@ -80,6 +79,6 @@ class Config implements ConfigInterface
      */
     public function getPricePrecision()
     {
-        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
+        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION);
     }
 }
