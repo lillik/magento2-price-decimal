@@ -9,6 +9,7 @@
 namespace Lillik\PriceDecimal\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use \Magento\Framework\App\State;
 
 class Config implements ConfigInterface
 {
@@ -27,13 +28,19 @@ class Config implements ConfigInterface
     private $scopeConfig;
 
     /**
+     * @var \Magento\Framework\App\State
+     */
+    private $state;
+
+    /**
      * @param ScopeConfigInterface $scopeConfig
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig
+        ScopeConfigInterface $scopeConfig,
+        State $state
     ) {
-
         $this->scopeConfig = $scopeConfig;
+        $this->state = $state;
     }
 
     /**
@@ -46,6 +53,7 @@ class Config implements ConfigInterface
 
     /**
      * Return Config Value by XML Config Path
+     *
      * @param string $path
      * @param string $scopeType
      *
@@ -61,6 +69,10 @@ class Config implements ConfigInterface
      */
     public function isEnable()
     {
+        if ($this->isAdmin()) {
+            return $this->getValueByPath(self::XML_PATH_GENERAL_ENABLE, ScopeConfigInterface::SCOPE_TYPE_DEFAULT);
+        }
+
         return $this->getValueByPath(self::XML_PATH_GENERAL_ENABLE);
     }
 
@@ -80,5 +92,15 @@ class Config implements ConfigInterface
     public function getPricePrecision()
     {
         return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        $areaCode = $this->state->getAreaCode();
+
+        return $areaCode == \Magento\Framework\App\Area::AREA_ADMINHTML;
     }
 }
