@@ -15,11 +15,25 @@
                     <depends>
                         <field id="*/*/enable">1</field>
                     </depends>
-                    <label>Show the decimal?</label>
+                    <label>Show decimal ?</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="price_precision" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Decimal Length</label>
+                    <label>Decimal length -- general purpose</label>
+                    <depends>
+                        <field id="*/*/enable">1</field>
+                    </depends>
+                    <source_model>Lillik\PriceDecimal\Block\System\Config\Form\Field\Precision</source_model>
+                </field>
+                <field id="price_precisionCart" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Decimal lenght -- Cart</label>
+                    <depends>
+                        <field id="*/*/enable">1</field>
+                    </depends>
+                    <source_model>Lillik\PriceDecimal\Block\System\Config\Form\Field\Precision</source_model>
+                </field>
+                <field id="price_precisionCheckout" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Decimal lenght -- Checkout</label>
                     <depends>
                         <field id="*/*/enable">1</field>
                     </depends>

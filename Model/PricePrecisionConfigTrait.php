@@ -26,7 +26,11 @@ trait PricePrecisionConfigTrait
     public function getPricePrecision()
     {
         if ($this->getConfig()->canShowPriceDecimal()) {
-            return $this->getConfig()->getPricePrecision();
+        		//return $context->getLayout();
+        		$Val = $this->getConfig()->getPricePrecision(); 
+        		$Val =  (strstr($_SERVER['PHP_SELF'], 'checkout') > -1 ) ? $this->getConfig()->getPricePrecisionCheckout() :  $Val;
+        		$Val =  (strstr($_SERVER['PHP_SELF'], 'cart') > -1 ) ? $this->getConfig()->getPricePrecisionCart() :  $Val;
+            return $Val;
         }
 
         return 0;
