@@ -12,7 +12,10 @@ use Magento\Framework\CurrencyInterface;
 use Magento\Framework\Currency as MagentoCurrency;
 use Lillik\PriceDecimal\Model\ConfigInterface;
 
-/** @method getPricePrecision */
+/**
+ * @method getPricePrecision
+ * @method getPricePrecisionCurrency
+ */
 class Currency extends MagentoCurrency implements CurrencyInterface
 {
 

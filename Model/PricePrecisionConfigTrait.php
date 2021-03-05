@@ -31,4 +31,20 @@ trait PricePrecisionConfigTrait
 
         return 0;
     }
+
+    /**
+     * @return int|mixed
+     */
+    public function getPricePrecisionCurrency()
+    {
+        if (!$this->getConfig()->canShowPriceDecimal()) {
+            return 0;
+        }
+
+        if (!$this->getConfig()->getDifferentForCurrency()) {
+            return $this->getConfig()->getPricePrecision();
+        }
+
+        return $this->getConfig()->getPricePrecisionCurrency();
+    }
 }
