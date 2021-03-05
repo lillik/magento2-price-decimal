@@ -7,6 +7,14 @@
                     <item name="class" xsi:type="string">Lillik\PriceDecimal\Ui\DataProvider\Product\Modifier\Price</item>
                     <item name="sortOrder" xsi:type="number">200</item>
                 </item>
+                <item name="pricetabcart" xsi:type="array">
+                    <item name="class" xsi:type="string">Lillik\PriceDecimal\Ui\DataProvider\Product\Modifier\Price</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
+                <item name="pricetabcheckout" xsi:type="array">
+                    <item name="class" xsi:type="string">Lillik\PriceDecimal\Ui\DataProvider\Product\Modifier\Price</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
             </argument>
         </arguments>
     </virtualType>

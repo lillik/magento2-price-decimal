@@ -26,8 +26,10 @@ class Format extends PriceFormatPluginAbstract
         $precision = $this->getPricePrecision();
 
         if ($this->getConfig()->isEnable()) {
-            $result['precision'] = $precision;
-            $result['requiredPrecision'] = $precision;
+            $result['precision'] 			= $precision;
+            $result['precisionCart']  		= $this->getConfig()->getPricePrecisionCart();
+            $result['precisionCheckout'] 	= $this->getConfig()->getPricePrecisionCheckout();
+            $result['requiredPrecision'] 	= $precision;
         }
 
         return $result;
