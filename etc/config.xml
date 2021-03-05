@@ -8,7 +8,8 @@
         </catalog_price_decimal>
         <catalog_price_decimalCart>
             <general>
-                <price_precisionCart>2</price_precisionCart>
+               <price_precisionCart>2</price_precisionCart>
+					<disable_for_actions>checkout_klarna_index</disable_for_actions>
             </general>
         </catalog_price_decimalCart>
         <catalog_price_decimalCheckout>

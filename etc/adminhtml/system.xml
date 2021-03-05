@@ -39,7 +39,13 @@
                     </depends>
                     <source_model>Lillik\PriceDecimal\Block\System\Config\Form\Field\Precision</source_model>
                 </field>
-        </group>
+              <field id="disable_for_actions" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Disable for actions</label>
+                    <depends>
+                        <field id="*/*/enable">1</field>
+                    </depends>
+                </field>
+				</group>
         </section>
     </system>
 </config>
