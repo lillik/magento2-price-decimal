@@ -1,11 +1,6 @@
 <?php
 
-/**
- *
- * @package package Lillik\PriceDecimal\Ui\DataProvider\Product\Modifier
- *
- * @author  Lilian Codreanu <lilian.codreanu@gmail.com>
- */
+declare(strict_types=1);
 
 namespace Lillik\PriceDecimal\Ui\DataProvider\Product\Modifier;
 

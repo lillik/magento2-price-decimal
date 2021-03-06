@@ -9,8 +9,8 @@
     "version": "1.0.6",
     "authors": [
         {
-            "name": "Lilian Codreanu",
-            "email": "lilian.codreanu@gmail.com",
+            "name": "LillikPro",
+            "email": "support@lillik.pro",
             "role": "Developer"
         }
     ],
@@ -18,7 +18,7 @@
         "source": ""
     },
     "require": {
-        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6|~7.1",
+        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6|~7.1|~7.3|~7.4",
         "magento/framework": "*"
     },
     "autoload": {

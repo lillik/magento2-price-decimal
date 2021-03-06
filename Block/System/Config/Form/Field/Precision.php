@@ -1,10 +1,6 @@
 <?php
-/**
- * @category   Evozon
- * @package    Magento_Evozon
- * @copyright  Copyright (c) 2018 Evozon (http://www.evozon.com)
- * @author     Lilian Codreanu <lilian.codreanu@evozon.com>
- */
+
+declare(strict_types=1);
 
 namespace Lillik\PriceDecimal\Block\System\Config\Form\Field;
 

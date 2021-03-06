@@ -1,10 +1,6 @@
 <?php
-/**
- *
- * @package package Lillik\PriceDecimal
- *
- * @author  Lilian Codreanu <lilian.codreanu@gmail.com>
- */
+
+declare(strict_types=1);
 
 namespace Lillik\PriceDecimal\Model;
 

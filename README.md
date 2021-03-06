@@ -43,3 +43,8 @@ The code is licensed under [Apache-2.0 License](https://www.apache.org/licenses/
 ### TODO 
  - Remove decimals in cart and checkout
  - Remove only zero decimal option ([description](https://github.com/lillik/magento2-price-decimal/issues/35))
+
+### Donation
+If this project help you reduce time to develop, you can give me a cup of coffee :)[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=LKAG7L4HWMVSL)
+
+![img](./qr-donate.png)

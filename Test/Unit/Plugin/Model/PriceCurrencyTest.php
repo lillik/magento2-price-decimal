@@ -1,10 +1,6 @@
 <?php
-/**
- * @category   Magento Module
- * @package    Magento_Lillik
- * @copyright  Copyright (c) 2017 Lilian Codreanu
- * @author     Lilian Codreanu <lilian.codreanu@evozon.com>
- */
+
+declare(strict_types=1);
 
 namespace Lillik\PriceDecimal\Test\Unit\Plugin\Model;
 
