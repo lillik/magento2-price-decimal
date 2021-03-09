@@ -28,7 +28,13 @@ The preferred way of installing lillik/magento2-price-decimal is through Compose
 php composer.phar require lillik/magento2-price-decimal
 ```
 
-Other way to install: copy all files from here to ./app/code/Lillik/PriceDecimal/ subdirectory ( you'll need to create the directory first).
+Other way to install: 
+- copy all files from here  ( green button "Code" )
+- use the way you want ( clone or Zip )
+- find you Magento directory ( look like  /var/www/html/MyRepositories/Magento/  or c:\MyFiles\MyWebSite\Magento  )
+- create in the previous directory the following sub-dir:  app/code/Lillik/PricDecimal
+- Copy the actual repository ( clone or unzip ) in /var/www/html/MyRepositories/Magento/app/code/Lillik/PriceDecimal 
+
 
 ### Configuration
 
