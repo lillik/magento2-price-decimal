@@ -11,6 +11,7 @@ namespace Lillik\PriceDecimal\Model;
 trait PricePrecisionConfigTrait
 {
 
+	public static $Val = 2;
 
     /**
      * @return \Lillik\PriceDecimal\Model\ConfigInterface

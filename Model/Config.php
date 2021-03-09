@@ -20,8 +20,8 @@ class Config implements ConfigInterface
 	const XML_PATH_DISABLE_FOR_ACTIONS 		= 'catalog_price_decimal/general/disable_for_actions';
 
 	const XML_PATH_PRICE_PRECISION 			= 'catalog_price_decimal/general/price_precision';
-	const XML_PATH_PRICE_PRECISIONCART 		= 'catalog_price_decimal/general/price_precisionCart';
-	const XML_PATH_PRICE_PRECISIONCHECKOUT = 'catalog_price_decimal/general/price_precisionCheckout';
+	const XML_PATH_PRICE_PRECISIONCART 		= 'catalog_price_decimal/general/price_precision';
+	const XML_PATH_PRICE_PRECISIONCHECKOUT = 'catalog_price_decimal/general/price_precision';
 
 
     /**
