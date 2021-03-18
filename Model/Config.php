@@ -83,11 +83,11 @@ class Config implements ConfigInterface
     /**
      * Return Price precision from store config
      *
-     * @return mixed
+     * @return int
      */
-    public function getPricePrecision()
+    public function getPricePrecision(): int
     {
-        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
+        return (int) $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
     }
 
     /**
@@ -103,10 +103,10 @@ class Config implements ConfigInterface
     /**
      * Return Price precision for currency from store config
      *
-     * @return mixed
+     * @return int
      */
-    public function getPricePrecisionCurrency()
+    public function getPricePrecisionCurrency(): int
     {
-        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION_CURRENCY, 'website');
+        return (int) $this->getValueByPath(self::XML_PATH_PRICE_PRECISION_CURRENCY, 'website');
     }
 }
