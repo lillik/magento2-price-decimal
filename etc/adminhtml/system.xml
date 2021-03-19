@@ -45,6 +45,18 @@
                         <field id="*/*/enable">1</field>
                     </depends>
                 </field>
+					<field id="different" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+						<label>Different Currency Precision</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+					<field id="price_precision_currency" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+						<label>Currency Decimal Length</label>
+						<depends>
+					<field id="*/*/enable">1</field>
+					<field id="*/*/different">1</field>
+						</depends>
+						<source_model>Lillik\PriceDecimal\Block\System\Config\Form\Field\Precision</source_model>
+					</field>
 				</group>
         </section>
     </system>

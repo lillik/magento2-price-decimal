@@ -4,6 +4,7 @@
  * @package package Lillik\PriceDecimal\Model\Plugin\Local
  *
  * @author  Lilian Codreanu <lilian.codreanu@gmail.com>
+ * Includes: differentCurrencies from quintenbuis  (2021-03-14)
  */
 
 namespace Lillik\PriceDecimal\Model\Plugin;
@@ -24,7 +25,7 @@ class Currency extends PriceFormatPluginAbstract
         ...$arguments
     ) {
         if ($this->getConfig()->isEnable()) {
-            $arguments[1]['precision'] = $subject->getPricePrecision();
+            $arguments[1]['precision'] = $subject->getPricePrecisionCurrency();
         }
         return $arguments;
     }

@@ -4,6 +4,7 @@
  * @package package Lillik\PriceDecimal
  *
  * @author  Lilian Codreanu <lilian.codreanu@gmail.com>
+ * Includes: differentCurrencies from quintenbuis  (2021-03-14)
  */
 
 namespace Lillik\PriceDecimal\Model;
@@ -12,7 +13,10 @@ use Magento\Framework\CurrencyInterface;
 use Magento\Framework\Currency as MagentoCurrency;
 use Lillik\PriceDecimal\Model\ConfigInterface;
 
-/** @method getPricePrecision */
+/**
+ * @method getPricePrecision
+ * @method getPricePrecisionCurrency
+ */
 class Currency extends MagentoCurrency implements CurrencyInterface
 {
 

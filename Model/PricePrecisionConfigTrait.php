@@ -4,6 +4,8 @@
  * @package Lillik\PriceDecimal
  *
  * @author  Lilian Codreanu <lilian.codreanu@gmail.com>
+ * Includes: differentCurrencies from quintenbuis  (2021-03-14)
+ * Includes: diffenteDecimales   from Patriboom		(2021-03-01)
  */
 
 namespace Lillik\PriceDecimal\Model;
@@ -80,4 +82,21 @@ trait PricePrecisionConfigTrait
         }
         return 0;
     }
+
+    /**
+     * @return int|mixed
+     */
+    public function getPricePrecisionCurrency()
+    {
+        if (!$this->getConfig()->canShowPriceDecimal()) {
+            return 0;
+        }
+
+        if (!$this->getConfig()->getDifferentForCurrency()) {
+            return $this->getConfig()->getPricePrecision();
+        }
+
+        return $this->getConfig()->getPricePrecisionCurrency();
+    }
+
 }

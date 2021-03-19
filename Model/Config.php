@@ -4,7 +4,8 @@
  * @package Lillik\PriceDecimal\Model
  * @author  Lilian Codreanu <lilian.codreanu@gmail.com>
  * includes Roy Nilsson's modifications ( Aug 2020 ) 
- * includes Patriboom's modifications   ( Mar 2021 ) 
+ * Includes: differentCurrencies from quintenbuis  (2021-03-14)
+ * Includes: diffenteDecimales   from Patriboom		(2021-03-01)
  */
 
 namespace Lillik\PriceDecimal\Model;
@@ -22,6 +23,9 @@ class Config implements ConfigInterface
 	const XML_PATH_PRICE_PRECISION 			= 'catalog_price_decimal/general/price_precision';
 	const XML_PATH_PRICE_PRECISIONCART 		= 'catalog_price_decimal/general/price_precision';
 	const XML_PATH_PRICE_PRECISIONCHECKOUT = 'catalog_price_decimal/general/price_precision';
+	
+	const XML_PATH_DIFFERENT_CURRENCY		= 'catalog_price_decimal/general/different';
+	const XML_PATH_PRICE_PRECISION_CURRENCY= 'catalog_price_decimal/general/price_precision_currency';
 
 
     /**
@@ -83,16 +87,39 @@ class Config implements ConfigInterface
     /**
      * Return Price precision from store config
      *
-     * @return mixed
+ * @return int
      */
-    public function getPricePrecision()
+    public function getPricePrecision(): int
+    {
+        return (int) $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
+    }
+
+    /**
+     * Returns if the currency decimal is different
+     *
+     * @return bool
+     */
+    public function getDifferentForCurrency(): bool
+    {
+        return (bool) $this->getValueByPath(self::XML_PATH_DIFFERENT_CURRENCY, 'website');
+    }
+
+    /**
+     * Return Price precision for currency from store config
+     *
+     * @return int
+     */
+    public function getPricePrecisionCurrency(): int
     {
         return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
+        return (int) $this->getValueByPath(self::XML_PATH_PRICE_PRECISION_CURRENCY, 'website');
     }
+
     public function getPricePrecisionCart()
     {
         return $this->getValueByPath(self::XML_PATH_PRICE_PRECISIONCART, 'website');
     }
+
     public function getPricePrecisionCheckout()
     {
         return $this->getValueByPath(self::XML_PATH_PRICE_PRECISIONCHECKOUT, 'website');

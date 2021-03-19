@@ -4,7 +4,8 @@
         <catalog_price_decimal>
             <general>
                 <price_precision>2</price_precision>
-            </general>
+                <different>0</different>
+                <price_precision_currency>2</price_precision_currency>            </general>
         </catalog_price_decimal>
         <catalog_price_decimalCart>
             <general>
