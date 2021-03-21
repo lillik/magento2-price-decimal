@@ -2,19 +2,20 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <preference for="Lillik\PriceDecimal\Model\ConfigInterface" type="Lillik\PriceDecimal\Model\Config" />
+    <preference for="Magento\Framework\CurrencyInterface" type="Lillik\PriceDecimal\Model\Currency" />
 
     <type name="Magento\Framework\Pricing\PriceCurrencyInterface">
-        <plugin name="lillik_price_decimal_price_currency"
-                type="Lillik\PriceDecimal\Model\Plugin\PriceCurrency"
-                sortOrder="10"
-                disabled="false"/>
+        <plugin name="lillik_price_decimal_price_currency" type="Lillik\PriceDecimal\Model\Plugin\PriceCurrency" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Framework\Locale\FormatInterface">
+        <plugin name="lillik_price_decimal_local_format" type="Lillik\PriceDecimal\Model\Plugin\Local\Format" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Sales\Api\Data\OrderInterface">
+        <plugin name="lillik_price_decimal_for_orders" type="Lillik\PriceDecimal\Model\Plugin\OrderPlugin" sortOrder="10" disabled="false"/>
     </type>
 
-    <type name="Magento\Framework\Locale\FormatInterface">
-        <plugin name="lillik_price_decimal_local_format"
-                type="Lillik\PriceDecimal\Model\Plugin\Local\Format"
-                sortOrder="10"
-                disabled="false"/>
+    <type name="Magento\Framework\CurrencyInterface">
+        <plugin name="lillik_price_decimal_for_currency" type="Lillik\PriceDecimal\Model\Plugin\Currency" sortOrder="10" disabled="false"/>
     </type>
 
 </config>
