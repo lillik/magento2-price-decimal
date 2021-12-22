@@ -18,6 +18,13 @@ class Config implements ConfigInterface
     const XML_PATH_GENERAL_ENABLE
         = 'catalog_price_decimal/general/enable';
 
+    const XML_PATH_DIFFERENT_CURRENCY
+        = 'catalog_price_decimal/general/different';
+
+    const XML_PATH_PRICE_PRECISION_CURRENCY
+        = 'catalog_price_decimal/general/price_precision_currency';
+
+
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
      */
@@ -72,10 +79,30 @@ class Config implements ConfigInterface
     /**
      * Return Price precision from store config
      *
-     * @return mixed
+     * @return int
      */
-    public function getPricePrecision()
+    public function getPricePrecision(): int
     {
-        return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
+        return (int) $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'website');
+    }
+
+    /**
+     * Returns if the currency decimal is different
+     *
+     * @return bool
+     */
+    public function getDifferentForCurrency(): bool
+    {
+        return (bool) $this->getValueByPath(self::XML_PATH_DIFFERENT_CURRENCY, 'website');
+    }
+
+    /**
+     * Return Price precision for currency from store config
+     *
+     * @return int
+     */
+    public function getPricePrecisionCurrency(): int
+    {
+        return (int) $this->getValueByPath(self::XML_PATH_PRICE_PRECISION_CURRENCY, 'website');
     }
 }

@@ -20,7 +20,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
                 $args[1] = true;
             }
             // Precision argument
-            $args[2] = $this->getPricePrecision();
+            $args[2] = $this->getPricePrecisionCurrency();
         }
 
         return $args;

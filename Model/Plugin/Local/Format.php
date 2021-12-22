@@ -19,7 +19,7 @@ class Format extends PriceFormatPluginAbstract
      */
     public function afterGetPriceFormat($subject, $result)
     {
-        $precision = $this->getPricePrecision();
+        $precision = $this->getPricePrecisionCurrency();
 
         if ($this->getConfig()->isEnable()) {
             $result['precision'] = $precision;
