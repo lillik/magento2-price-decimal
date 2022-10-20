@@ -26,6 +26,27 @@ define([
         return (new Array(times + 1)).join(string);
     }
 
+    function formatPriceLocale(amount, format, isShowSign)
+    {
+        var s = '',
+            precision, pattern, locale, r;
+
+        format = _.extend(globalPriceFormat, format);
+        precision = isNaN(format.requiredPrecision = Math.abs(format.requiredPrecision)) ? 2 : format.requiredPrecision;
+        pattern = format.pattern || '%s';
+        locale = window.LOCALE || 'en-US';
+        if (isShowSign === undefined || isShowSign === true) {
+            s = amount < 0 ? '-' : isShowSign ? '+' : '';
+        } else if (isShowSign === false) {
+            s = '';
+        }
+        pattern = pattern.indexOf('{sign}') < 0 ? s + pattern : pattern.replace('{sign}', s);
+        amount = Number(Math.round(Math.abs(+amount || 0) + 'e+' + precision) + ('e-' + precision));
+        r = amount.toLocaleString(locale, {minimumFractionDigits: precision});
+
+        return pattern.replace('%s', r).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
+
     /**
      * Formatter for price amount
      * @param  {Number}  amount
@@ -114,10 +135,13 @@ define([
         }
     }
 
+
+
     return {
         formatPrice: formatPrice,
         deepClone: objectDeepClone,
         strPad: stringPad,
-        findOptionId: findOptionId
+        findOptionId: findOptionId,
+        formatPriceLocale: formatPriceLocale
     };
 });
