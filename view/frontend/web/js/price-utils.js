@@ -75,7 +75,7 @@ define([
         } else if (isShowSign === false) {
             s = '';
         }
-        
+
         pattern = pattern.indexOf('{sign}') < 0 ? s + pattern : pattern.replace('{sign}', s);
 
         // we're avoiding the usage of to fixed, and using round instead with the e representation to address
@@ -136,8 +136,6 @@ define([
             return id;
         }
     }
-
-
 
     return {
         formatPrice: formatPrice,
