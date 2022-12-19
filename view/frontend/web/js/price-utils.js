@@ -35,11 +35,12 @@ define([
         precision = isNaN(format.requiredPrecision = Math.abs(format.requiredPrecision)) ? 2 : format.requiredPrecision;
         pattern = format.pattern || '%s';
         locale = window.LOCALE || 'en-US';
+        s = '';
+        
         if (isShowSign === undefined || isShowSign === true) {
             s = amount < 0 ? '-' : isShowSign ? '+' : '';
-        } else if (isShowSign === false) {
-            s = '';
         }
+        
         pattern = pattern.indexOf('{sign}') < 0 ? s + pattern : pattern.replace('{sign}', s);
         amount = Number(Math.round(Math.abs(+amount || 0) + 'e+' + precision) + ('e-' + precision));
         r = amount.toLocaleString(locale, {minimumFractionDigits: precision});
@@ -68,10 +69,11 @@ define([
         groupSymbol = format.groupSymbol === undefined ? '.' : format.groupSymbol;
         groupLength = format.groupLength === undefined ? 3 : format.groupLength;
         pattern = format.pattern || '%s';
-        s = '';
         
         if (isShowSign === undefined || isShowSign === true) {
             s = amount < 0 ? '-' : isShowSign ? '+' : '';
+        } else if (isShowSign === false) {
+            s = '';
         }
         
         pattern = pattern.indexOf('{sign}') < 0 ? s + pattern : pattern.replace('{sign}', s);
