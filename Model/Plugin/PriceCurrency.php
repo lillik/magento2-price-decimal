@@ -40,11 +40,8 @@ class PriceCurrency extends PriceFormatPluginAbstract
         ...$args
     ) {
         if ($this->getConfig()->isEnable()) {
-            if (is_string($price)) {
-                $price = floatval($price);
-            }
-
-            return round($price, $this->getPricePrecision());
+            $price = (float) $price;
+            return round($price, (int) $this->getPricePrecision());
         } else {
             return $proceed($price);
         }
@@ -61,7 +58,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
     ) {
         if ($this->getConfig()->isEnable()) {
             // add the optional args
-            $args[1] = isset($args[1])? $args[1] : null;
+            $args[1] = isset($args[1]) ? $args[1] : null;
             $args[2] = intval($this->getPricePrecision());
         }
 
@@ -79,8 +76,8 @@ class PriceCurrency extends PriceFormatPluginAbstract
     ) {
         if ($this->getConfig()->isEnable()) {
             //add optional args
-            $args[1] = isset($args[1])? $args[1] : null;
-            $args[2] = isset($args[2])? $args[2] : null;
+            $args[1] = isset($args[1]) ? $args[1] : null;
+            $args[2] = isset($args[2]) ? $args[2] : null;
             $args[3] = $this->getPricePrecision();
         }
 
