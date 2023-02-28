@@ -26,6 +26,28 @@ define([
         return (new Array(times + 1)).join(string);
     }
 
+    function formatPriceLocale(amount, format, isShowSign)
+    {
+        var s = '',
+            precision, pattern, locale, r;
+
+        format = _.extend(globalPriceFormat, format);
+        precision = isNaN(format.requiredPrecision = Math.abs(format.requiredPrecision)) ? 2 : format.requiredPrecision;
+        pattern = format.pattern || '%s';
+        locale = window.LOCALE || 'en-US';
+        s = '';
+        
+        if (isShowSign === undefined || isShowSign === true) {
+            s = amount < 0 ? '-' : isShowSign ? '+' : '';
+        }
+        
+        pattern = pattern.indexOf('{sign}') < 0 ? s + pattern : pattern.replace('{sign}', s);
+        amount = Number(Math.round(Math.abs(+amount || 0) + 'e+' + precision) + ('e-' + precision));
+        r = amount.toLocaleString(locale, {minimumFractionDigits: precision});
+
+        return pattern.replace('%s', r).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
+
     /**
      * Formatter for price amount
      * @param  {Number}  amount
@@ -47,12 +69,13 @@ define([
         groupSymbol = format.groupSymbol === undefined ? '.' : format.groupSymbol;
         groupLength = format.groupLength === undefined ? 3 : format.groupLength;
         pattern = format.pattern || '%s';
-
+        
         if (isShowSign === undefined || isShowSign === true) {
             s = amount < 0 ? '-' : isShowSign ? '+' : '';
         } else if (isShowSign === false) {
             s = '';
         }
+
         pattern = pattern.indexOf('{sign}') < 0 ? s + pattern : pattern.replace('{sign}', s);
 
         // we're avoiding the usage of to fixed, and using round instead with the e representation to address
@@ -118,6 +141,7 @@ define([
         formatPrice: formatPrice,
         deepClone: objectDeepClone,
         strPad: stringPad,
-        findOptionId: findOptionId
+        findOptionId: findOptionId,
+        formatPriceLocale: formatPriceLocale
     };
 });
